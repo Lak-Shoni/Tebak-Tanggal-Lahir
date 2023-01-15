@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>pilih tanggal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <div class="card-content">
+            <div class="card-title">
+                <p>SELAMAT DATANG DI PROGRAM PENEBAK TANGGAL LAHIR</p>
+                <p>by Shoni</p>
+                <br>
+                <img src="img/1.png" id="pic">
+                <br><br>
+                <p id="tanya">Apakah ada tanggal lahir kamu?</p><br>
+				<div id="tombol">
+					<button class="button" onclick="fun(true)">Ada</button>
+					<button class="button" onclick="fun(false)">Tidak</button>
+				</div>
+                
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+<script>
+	var x=0;
+	var bulan=0;
+	var tanggal=0;
+	var ada=true;
+	var bulanarray=["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+	function fun(ada){
+		if(x==0){
+			document.getElementById("pic").src="img/2.png";
+			x++
+			if(ada==true){
+				tanggal = tanggal+1
+			}else{
+				tanggal = tanggal+0
+			}
+		}else if(x==1){
+			document.getElementById("pic").src="img/3.png";
+			x++
+			if(ada==true){
+				tanggal = tanggal+2
+			}else{
+				tanggal = tanggal+0
+			}
+		}else if(x==2){
+			document.getElementById("pic").src="img/4.png";
+			x++
+			if(ada==true){
+				tanggal = tanggal+4
+			}else{
+				tanggal = tanggal+0
+			}
+		}else if(x==3){
+			document.getElementById("pic").src="img/5.png";
+			x++
+			if(ada==true){
+				tanggal = tanggal+8
+			}else{
+				tanggal = tanggal+0
+			}
+		}else if(x==4){
+			document.getElementById("tanya").innerHTML="Apakah ada bulan lahir kamu?";
+			document.getElementById("pic").src="img/6.png";
+			x++
+			if(ada==true){
+				tanggal = tanggal+16
+			}else{
+				tanggal = tanggal+0
+			}
+		}else if(x==5){
+			document.getElementById("pic").src="img/7.png";
+			x++
+			if(ada==true){
+				bulan = bulan+1
+			}else{
+				bulan = bulan+0
+			}
+		}else if(x==6){
+			document.getElementById("pic").src="img/8.png";
+			x++
+			if(ada==true){
+				bulan = bulan+2
+			}else{
+				bulan = bulan+0
+			}
+		}else if(x==7){
+			document.getElementById("pic").src="img/9.png";
+			x++
+			if(ada==true){
+				bulan = bulan+4
+			}else{
+				bulan = bulan+0
+			}
+		}else{
+			if(ada==true){
+				bulan = bulan+8
+			}else{
+				bulan = bulan+0
+			}
+			
+			document.getElementById("pic").src="img/10.png";
+			document.getElementById("tanya").innerHTML='Tanggal lahir anda adalah '+tanggal+' '+bulanarray[bulan-1];
+			hide();
+			
+			
+		}
+	}
+
+	var tombol = document.getElementById("tombol"); 
+
+	function hide(){
+    tombol.style.display = "none";
+
+  } 
+
+</script>
+</html>
